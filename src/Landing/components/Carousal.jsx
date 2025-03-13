@@ -28,7 +28,7 @@ const Carousal = () => {
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-96 object-cover rounded-lg shadow-lg"
+              className="w-full h-96 object-cover rounded-lg shadow-2xl"
             />
           </div>
         ))}
