@@ -1,14 +1,15 @@
 import React from 'react'
-import {  Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Home from '../pages/Home/Home';
+import Games from '../component/Games/Games';
 import Guestlayout from '../layouts/GuestLayout';
-import Home from '../Landing/Home';
-import Games from '../Landing/components/Games';
-import AboutUs from '../Landing/components/AboutUs';
-import ContactUs from '../Landing/components/ContactUs';
-import Blog from '../Landing/components/Blog';
-import SupportUs from '../Landing/components/SupportUs';
-import Login from '../Auth/Components/Login';
-import Register from '../Auth/Components/Register';
+import AboutUs from '../component/AboutUs/AboutUs';
+import ContactUs from '../component/ContactUs/ContactUs';
+import Blog from '../component/Blog/Blog';
+import SupportUs from '../component/SupportUs/SupportUs';
+import GameTypePage from '../component/Games/GameTypePage';
+import DeveloperLandingPage from '../Developer/DevLanding';
+
 
 
 
@@ -20,23 +21,25 @@ const Router = () => {
 
     <Routes>
       <Route path='/' element={<Guestlayout />}>
-      <Route index element={<Home />} />
-   
-      <Route path="/games" element={<Games/>} />
+        <Route index element={<Home />} />
 
-      <Route path="/about" element={<AboutUs />} />
-      <Route path="/contact" element={<ContactUs />} />
-      <Route path="/blog" element={<Blog />} />
+        <Route path="/games" element={<Games />} />
 
-      <Route path="/support" element={<SupportUs />} />
-   
-  
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/blog" element={<Blog />} />
+
+        <Route path="/support" element={<SupportUs />} />
+
+        <Route path="/games/:type" element={<GameTypePage />} />
+
+
 
       </Route>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
 
-      
+      <Route path="/developer" element={<DeveloperLandingPage />} />
+
+
     </Routes>
 
   );

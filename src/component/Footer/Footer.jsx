@@ -6,13 +6,14 @@ const Footer = () => {
 
   <footer className="w-full bg-gray-800 py-10">
   <div className="max-w-6xl mx-auto px-6">
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
 
       <div>
         <h3 className="text-xl font-bold text-purple-400 mb-4">About WishAlpha</h3>
         <p className="text-gray-300">
           WishAlpha is your go-to platform for instant gaming fun. Explore a wide variety of games and join our growing community.
         </p>
+       
       </div>
 
       <div>
@@ -24,6 +25,14 @@ const Footer = () => {
           <li><Link to="/contact" className="text-gray-300 hover:text-purple-400 transition-colors">Contact Us</Link></li>
           <li><Link to="/support" className="text-gray-300 hover:text-purple-400 transition-colors">Support Us</Link></li>
           <li><Link to="/blog" className="text-gray-300 hover:text-purple-400 transition-colors">Blog</Link></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-xl font-bold text-purple-400 mb-4">Join Us</h3>
+        <ul className="space-y-2">
+          <li><Link to="/developer" className="text-gray-300 hover:text-purple-400 transition-colors underline">WishAlpha for Developers</Link></li>
+    
         </ul>
       </div>
 
