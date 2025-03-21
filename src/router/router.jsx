@@ -25,11 +25,11 @@ const Router = () => {
 
         <Route path="/games" element={<Games />} />
 
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/blog" element={<Blog />} />
 
-        <Route path="/support" element={<SupportUs />} />
+        <Route path="/support-us" element={<SupportUs />} />
 
         <Route path="/games/:type" element={<GameTypePage />} />
 
