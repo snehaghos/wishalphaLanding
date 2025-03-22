@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Navbar from '../Landing/components/Navbar'
-import Footer from '../Landing/components/Footer'
+import Navbar from '../component/Navbar/Navbar'
+import Footer from '../component/Footer/Footer'
 
 const Guestlayout = () => {
   return (
