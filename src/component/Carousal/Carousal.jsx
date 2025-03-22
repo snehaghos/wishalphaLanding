@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick"; // Import Slider from react-slick
-import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -29,7 +28,7 @@ const Carousal = () => {
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-96 object-cover rounded-lg shadow-lg"
+              className="w-full h-96 object-cover rounded-lg shadow-2xl"
             />
           </div>
         ))}
