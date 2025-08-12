@@ -9,6 +9,7 @@ import Blog from '../component/Blog/Blog';
 import SupportUs from '../component/SupportUs/SupportUs';
 import GameTypePage from '../component/Games/GameTypePage';
 import DeveloperLandingPage from '../Developer/DevLanding';
+import Team from '../component/Team/Team';
 
 
 
@@ -26,6 +27,7 @@ const Router = () => {
         <Route path="/games" element={<Games />} />
 
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/team" element={<Team />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/blog" element={<Blog />} />
 

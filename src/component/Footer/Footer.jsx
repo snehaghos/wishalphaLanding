@@ -33,7 +33,7 @@ const Footer = () => {
           <h3 className="text-xl font-bold text-purple-400 mb-4">Join Us</h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/developer" className="text-gray-400 hover:text-purple-400 transition-colors underline">
+              <Link to="https://developer.wishalpha.com" className="text-gray-400 hover:text-purple-400 transition-colors underline">
                 WishAlpha for Developers
               </Link>
             </li>
