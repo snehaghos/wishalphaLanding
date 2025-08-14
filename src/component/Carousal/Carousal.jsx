@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
 import { Play, Download, ArrowBigLeftDash, ArrowBigRightDash } from "lucide-react"
 import SplashCursor from "../../bits/SplashCursor"
+import { Link } from "react-router-dom"
 
 const InteractiveBackground = () => {
   const mouseX = useMotionValue(0)
@@ -74,7 +75,7 @@ const InteractiveBackground = () => {
 
 const InteractiveTitle = ({ isVisible }) => {
   const [hoveredWord, setHoveredWord] = useState(null)
-  const words = ["Enter", "the", "Ultimate", "Gaming", "Universe"]
+  const words = ["Enter", "the", "Ultimate", "Coding", "Universe"]
 
   return (
     <motion.h1
@@ -169,7 +170,9 @@ const InteractiveButtons = ({ isVisible }) => {
         <motion.div whileHover={{ rotate: 360, scale: 1.2 }} transition={{ duration: 0.6 }}>
           <Play className="mr-2 h-5 w-5" />
         </motion.div>
-        Start Playing Now
+       <Link to="/team" className="text-white">
+          Visit Core Team
+        </Link>
       </motion.button>
 
       <motion.button
@@ -251,15 +254,17 @@ const InteractiveStatCard = ({ stat, index }) => {
 }
 
 const InteractiveStats = () => {
+   
   const stats = [
     { value: "10M+", label: "Active Players", color: "text-purple-400", bgColor: "bg-purple-500/10" },
+    //  { value: `${visits}+`, label: "Website Visits", color: "text-purple-400", bgColor: "bg-purple-500/10" },
     { value: "500+", label: "Games Available", color: "text-pink-400", bgColor: "bg-pink-500/10" },
     { value: "24/7", label: "Online Support", color: "text-blue-400", bgColor: "bg-blue-500/10" },
     { value: "99.9%", label: "Uptime", color: "text-green-400", bgColor: "bg-green-500/10" },
   ]
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       {stats.map((stat, index) => (
         <InteractiveStatCard key={stat.label} stat={stat} index={index} />
       ))}

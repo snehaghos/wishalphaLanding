@@ -17,7 +17,10 @@ const teamMembers = [
     expertise: ["Web Development ", " Machine Learning"],
     projects: ["DMS", "School Management App", "WishAlpha (Under Progress)", "Multiple Games"],
     joined: "Jan 2022",
-    connectedSince: "Very Beginning"
+    connectedSince: "Very Beginning",
+    github: "https://github.com/Avhisek-2023",
+    linkedin: "https://www.linkedin.com/in/avhisek-shaw-88b3522b9/",
+    email: "avhisek.shaw@gmail.com "
   },
   {
     name: "Dipika Mandal",
@@ -33,7 +36,10 @@ const teamMembers = [
     expertise: "Web Development",
     projects: ["Chit Chat (Chatting Site)", "WishAlpha (Under Progress)", "Multiple Games"],
     joined: "2019",
-    connectedSince: "Starting"
+    connectedSince: "Starting",
+    github: "https://github.com/Mandal03Dipika",
+    linkedin: " https://www.linkedin.com/in/dipika-mandal/",
+    email: "connect.dipika.mandal@gmail.com "
   },
   {
     name: "Sonu Kumar Shaw",
@@ -49,7 +55,8 @@ const teamMembers = [
     expertise: "Web Development",
     projects: ["WishAlpha (Under Progress)", "Multiple Games (Minesweeper, Othello, Checkers)"],
     joined: "Jan 2024",
-    connectedSince: "Very Beginning"
+    connectedSince: "Very Beginning",
+
   },
   {
     name: "Soham Saha",
@@ -65,7 +72,10 @@ const teamMembers = [
     expertise: "Web Development",
     projects: ["DMS", "Library Management System (Under Progress)", "Multiple Games"],
     joined: "Mar 2024",
-    connectedSince: "Very Beginning"
+    connectedSince: "Very Beginning",
+    github: "https://github.com/ss225114",
+    linkedin: "https://www.linkedin.com/in/soham-saha-7aa86a284/",
+    email: "sohamsaha278@gmail.com "
   },
   {
     name: "Krishanu Dey",
@@ -80,7 +90,10 @@ const teamMembers = [
     expertise: "Web Development",
     projects: ["Jobsite", "Library Management System (In Progress)", "Multiple Games"],
     joined: "Nov 2023",
-    connectedSince: "Very Beginning"
+    connectedSince: "Very Beginning",
+    github: "https://github.com/krishanu225",
+    linkedin: "https://www.linkedin.com/in/krishanu-dey-b5044b37a/",
+    email: "Krishanud322@gmail.com "
   },
   {
     name: "Sneha Ghoshal",
@@ -88,7 +101,7 @@ const teamMembers = [
     languages: ["C", "C++", "Python", "SQL", "JavaScript", "R"],
     frameworks: ["React.js", "Next.js (Started)", "Express.js (TS)"],
     databases: ["MySQL", "MongoDB"],
-    librariesTools: ["Figma", "Adobe Photoshop", "Blender"],
+    librariesTools: ["Postman","Figma", "Adobe Photoshop", "Blender"],
     versionControl: ["GitHub"],
     platform: "VS Code",
     degree: "BCA (H)",
@@ -96,7 +109,10 @@ const teamMembers = [
     expertise: ["Web Development", "Design"],
     projects: ["Jobsite (In Progress)", "POPO (In Progress)", "Biodata Maker", "Games (Minesweeper, Reversi, BlockBurst, ColorClash, Checkers)"],
     joined: "Aug 2021",
-    connectedSince: "Since the Beginning"
+    connectedSince: "Since the Beginning",
+    github: "https://github.com/snehaghos",
+    linkedin: "https://www.linkedin.com/in/sneha-ghoshal-aa4459327/",
+    email: "snehaghoshal577@gmail.com"
   },
   {
     name: "Aryan Kumar Ray",
@@ -111,7 +127,10 @@ const teamMembers = [
     expertise: "Web Development",
     projects: ["Games"],
     joined: "July 2022",
-    connectedSince: "March 2025"
+    connectedSince: "March 2025",
+    github: "https://github.com/aryan-code-04",
+    linkedin: "https://www.linkedin.com/in/aryan-kumar-ray-ray-54a45237a/",
+    email: "aryan.kr.ray.code@gmail.com "
   },
   {
     name: "Shramana Show",
@@ -158,7 +177,10 @@ const teamMembers = [
       "Games (NumTrip, MineSweeper, Checkers, Othello)"
     ],
     joined: "July 2022",
-    connectedSince: "Starting"
+    connectedSince: "Starting",
+    github: "https://github.com/shramana263",
+    linkedln: "https://www.linkedin.com/in/shramanashow/",
+    email: "shramana652@gmail.com "
   },
   {
     name: "Priyanshu Chourasia",
@@ -208,14 +230,16 @@ const teamMembers = [
     currentCompany: "Primesys Technologies, Pune",
     role: "Software Developer",
     experience: "2 years of development experience",
-    github: "https://github.com/PriyanshuChourasia"
+    github: "https://github.com/PriyanshuChourasia",
+    linkedln:"https://www.linkedin.com/in/priyanshu-chourasia-17833120a/",
+    email: "priyanshuchourasia916@gmail.com"
   }
 
 
 ];
 
 
-const expertises = ["All", "Leadership", "Web Deployment", "Development", " Database handling", "Design"];
+const expertises = ["All", "Leadership", "Web Development", "Development", " Database handling", "Design"];
 
 const Button = ({ children, className = "", variant = "default", size = "default", onClick, ...props }) => {
   const baseClasses = "inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
@@ -262,9 +286,13 @@ export default function Teams() {
     setSelectedMember(null);
   };
 
-  const filteredMembers = selectedExpertise === "All"
-    ? teamMembers
-    : teamMembers.filter(member => member.expertise === selectedExpertise);
+const filteredMembers = selectedExpertise === "All"
+  ? teamMembers
+  : teamMembers.filter(member =>
+      Array.isArray(member.expertise)
+        ? member.expertise.some(exp => exp.trim() === selectedExpertise.trim())
+        : member.expertise.trim() === selectedExpertise.trim()
+    );
 
   return (
     <main className="min-h-screen bg-gray-900">
@@ -302,8 +330,8 @@ export default function Teams() {
                 key={expertise}
                 onClick={() => setSelectedExpertise(expertise)}
                 className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 ${selectedExpertise === expertise
-                    ? 'bg-blue-600 text-white border border-blue-500'
-                    : 'bg-gray-800 border border-gray-600 text-gray-300 hover:text-white hover:border-gray-500 hover:bg-gray-700'
+                  ? 'bg-blue-600 text-white border border-blue-500'
+                  : 'bg-gray-800 border border-gray-600 text-gray-300 hover:text-white hover:border-gray-500 hover:bg-gray-700'
                   }`}
                 style={{
                   animationDelay: `${index * 0.1}s`

@@ -38,11 +38,7 @@ const TeamModal = ({ member, isOpen, onClose }) => {
                         <Linkedin className="h-5 w-5" />
                       </a>
                     )}
-                    {member.twitter && (
-                      <a href={member.twitter} className="p-2 bg-gray-700 hover:bg-gray-600 rounded-full text-white transition-colors">
-                        <Twitter className="h-5 w-5" />
-                      </a>
-                    )}
+              
                     {member.github && (
                       <a href={member.github} className="p-2 bg-gray-700 hover:bg-gray-600 rounded-full text-white transition-colors">
                         <Github className="h-5 w-5" />
