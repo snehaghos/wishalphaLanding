@@ -10,6 +10,7 @@ import SupportUs from '../component/SupportUs/SupportUs';
 import GameTypePage from '../component/Games/GameTypePage';
 import DeveloperLandingPage from '../Developer/DevLanding';
 import Team from '../component/Team/Team';
+import NoPage from '../component/No-page';
 
 
 
@@ -34,6 +35,8 @@ const Router = () => {
         <Route path="/support-us" element={<SupportUs />} />
 
         <Route path="/games/:type" element={<GameTypePage />} />
+        <Route path="/nopagefound" element={<NoPage />} />
+        {/* <Route path='/inde' */}
 
 
 

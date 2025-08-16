@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50">
       <div
         className="flex justify-between items-center  mx-auto px-4 py-3
-        backdrop-blur-md bg-white/10 border-b border-white/20 shadow-lg "
+        backdrop-blur-md bg-white/10  shadow-lg "
       >
      
         <Link to="/" className="flex items-center">
