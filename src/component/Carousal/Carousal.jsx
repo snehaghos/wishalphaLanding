@@ -24,7 +24,7 @@ const InteractiveBackground = () => {
   return (
     <>
       <motion.div
-        
+
         animate={{
           scale: [1, 1.2, 1],
           rotate: [0, 180, 360],
@@ -37,7 +37,7 @@ const InteractiveBackground = () => {
         className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"
       />
       <motion.div
-      
+
         animate={{
           scale: [1.2, 1, 1.2],
           rotate: [360, 180, 0],
@@ -87,11 +87,10 @@ const InteractiveTitle = ({ isVisible }) => {
       {words.map((word, index) => (
         <motion.span
           key={index}
-          className={`inline-block mr-4 cursor-pointer ${
-            hoveredWord === index
-              ? "bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
-              : "bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent"
-          }`}
+          className={`inline-block mr-4 cursor-pointer ${hoveredWord === index
+            ? "bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
+            : "bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent"
+            }`}
           onMouseEnter={() => setHoveredWord(index)}
           onMouseLeave={() => setHoveredWord(null)}
           whileHover={{
@@ -145,6 +144,10 @@ const InteractiveDescription = ({ isVisible }) => {
 }
 
 const InteractiveButtons = ({ isVisible }) => {
+
+  const handleRegister = () => {
+    console.log("Register button clicked")
+  }
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -170,11 +173,11 @@ const InteractiveButtons = ({ isVisible }) => {
         <motion.div whileHover={{ rotate: 360, scale: 1.2 }} transition={{ duration: 0.6 }}>
           <Play className="mr-2 h-5 w-5" />
         </motion.div>
-       <Link to="/team" className="text-white">
+        <Link to="/team" className="text-white">
           Visit Core Team
         </Link>
       </motion.button>
-
+<Link to="/nopagefound" onClick={handleRegister()} className="text-white">
       <motion.button
         whileHover={{
           scale: 1.05,
@@ -185,16 +188,20 @@ const InteractiveButtons = ({ isVisible }) => {
         whileTap={{ scale: 0.95 }}
         className="group relative flex items-center px-8 py-4 border border-gray-600 text-gray-300 hover:bg-gray-800 rounded-lg text-lg font-semibold transition-all duration-300 overflow-hidden"
       >
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-pink-600/10 opacity-0 group-hover:opacity-100"
-          transition={{ duration: 0.3 }}
-        />
-        <motion.div whileHover={{ y: -2, scale: 1.1 }} transition={{ duration: 0.3 }}>
-          <ArrowBigRightDash className="mr-2 h-5 w-5" />
-        </motion.div>
-        Register now
+        
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-pink-600/10 opacity-0 group-hover:opacity-100"
+            transition={{ duration: 0.3 }}
+          />
+          <motion.div whileHover={{ y: -2, scale: 1.1 }} transition={{ duration: 0.3 }}>
+            <ArrowBigRightDash className="mr-2 h-5 w-5" />
+          </motion.div>
+
+          Register now
+      
       </motion.button>
-    </motion.div>
+  </Link>
+    </motion.div >
   )
 }
 
@@ -254,7 +261,7 @@ const InteractiveStatCard = ({ stat, index }) => {
 }
 
 const InteractiveStats = () => {
-   
+
   const stats = [
     { value: "10M+", label: "Active Players", color: "text-purple-400", bgColor: "bg-purple-500/10" },
     //  { value: `${visits}+`, label: "Website Visits", color: "text-purple-400", bgColor: "bg-purple-500/10" },
@@ -264,7 +271,7 @@ const InteractiveStats = () => {
   ]
 
   return (
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       {stats.map((stat, index) => (
         <InteractiveStatCard key={stat.label} stat={stat} index={index} />
       ))}
@@ -299,7 +306,7 @@ const InteractiveHeroContent = ({ isVisible }) => {
       onMouseLeave={handleMouseLeave}
     >
       <motion.div
-        initial={{  y: 30 }}
+        initial={{ y: 30 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
         transition={{ duration: 0.8 }}
         whileHover={{ scale: 1.05, y: -5 }}
@@ -322,10 +329,10 @@ const Carousal = ({ isVisible }) => {
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-gray-950 to-pink-900/20 z-0" />
 
 
-{/* <SplashCursor/> */}
+      {/* <SplashCursor/> */}
       <InteractiveBackground />
 
- <InteractiveBackground />
+      <InteractiveBackground />
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
         <InteractiveHeroContent isVisible={isVisible} />
       </div>
