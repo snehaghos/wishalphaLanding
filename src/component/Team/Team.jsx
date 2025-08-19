@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Github, Linkedin, Twitter, Mail, MapPin, Calendar, Eye, X } from 'lucide-react';
 import TeamModal from './modal/teams';
 
+
 const teamMembers = [
   {
     name: "Avhisek Shaw",
@@ -101,7 +102,7 @@ const teamMembers = [
     languages: ["C", "C++", "Python", "SQL", "JavaScript", "R"],
     frameworks: ["React.js", "Next.js (Started)", "Express.js (TS)"],
     databases: ["MySQL", "MongoDB"],
-    librariesTools: ["Postman","Figma", "Adobe Photoshop", "Blender"],
+    librariesTools: ["Postman", "Figma", "Adobe Photoshop", "Blender"],
     versionControl: ["GitHub"],
     platform: "VS Code",
     degree: "BCA (H)",
@@ -231,13 +232,132 @@ const teamMembers = [
     role: "Software Developer",
     experience: "2 years of development experience",
     github: "https://github.com/PriyanshuChourasia",
-    linkedln:"https://www.linkedin.com/in/priyanshu-chourasia-17833120a/",
+    linkedln: "https://www.linkedin.com/in/priyanshu-chourasia-17833120a/",
     email: "priyanshuchourasia916@gmail.com"
+  },
+  {
+    name: "Aditya Dey",
+    image: "./images/aditya.jpg",
+    languages: ["Java", "C", "Python", "JavaScript"],
+    frameworks: [],
+    databases: [],
+    librariesTools: [],
+    versionControl: ["GitHub"],
+    platform: "VS Code",
+    degree: "B.Tech in CSE",
+    college: "Brainware University",
+    expertise: "Fresher",
+    projects: [],
+    joined: "3rd March 2025",
+    connectedSince: "2025",
+    github: "",
+    linkedin: "",
+    email: ""
+  },
+  {
+    name: "Trishit Karmakar",
+    image: "./images/trishit.jpg",
+    languages: ["JavaScript", "Python", "C"],
+    frameworks: ["Bootstrap", "HTML", "CSS"],
+    databases: ["SQLite"],
+    librariesTools: [],
+    versionControl: ["GitHub"],
+    platform: "VS Code",
+    degree: "",
+    class: "12",
+    school: "Krishnapur Adarsha Vidyamandir",
+    expertise: "Fresher",
+    projects: ["Contact Book", "Shopping App"],
+    joined: "04/03/2024",
+    connectedSince: "1.5 years",
+    github: "https://github.com/trishit-624",
+    linkedin: "",
+    email: "trishitkarmakar624@gmail.com"
+  },
+  {
+    name: "Disa Mondal",
+    image: "./images/person.png",
+    languages: ["Python"],
+    frameworks: ["HTML", "CSS"],
+    databases: [],
+    librariesTools: [],
+    versionControl: [],
+    platform: "VS Code",
+    degree: "",
+    class: "12",
+    school: "Chittaranjan Colony Hindu Vidyapith",
+    expertise: "Fresher",
+    projects: [],
+    joined: "20/06/2024",
+    connectedSince: "1.3 years",
+    github: "",
+    linkedin: "",
+    email: "mondaldisa66@gmail.com"
+  },
+  {
+    name: "Advaita Dey",
+    image: "./images/person.png",
+    languages: ["Java", "Python", "C", "C++"],
+    frameworks: ["Pandas", "NumPy", "Seaborn", "Scikit-learn", "Matplotlib"],
+    databases: ["MySQL", "MSSQL"],
+    librariesTools: ["PyCharm", "Anaconda", "VS Code", "Eclipse IDE", "Power BI", "Excel"],
+    versionControl: [],
+    platform: "VS Code",
+    degree: "B.Tech in CSE",
+    college: "SurTech (2020-2024)",
+    expertise: ["Machine Learning"],
+    projects: [],
+    joined: "",
+    connectedSince: "",
+    github: "",
+    linkedin: "",
+    email: "programmermr700@gmail.com"
+  },
+  {
+    name: "Swagata Ghosh",
+    image: "./images/swagata.jpg",
+    languages: ["Python", "JavaScript"],
+    frameworks: ["Bootstrap", "HTML", "CSS"],
+    databases: ["SQLite"],
+    librariesTools: [],
+    versionControl: ["GitHub"],
+    platform: "VS Code",
+    degree: "",
+    class: "12",
+    school: "Krishnapur Adarsha Vidyamandir",
+    expertise: "Fresher",
+    projects: ["Contact Book", "Shopping App"],
+    joined: "19/03/2025",
+    connectedSince: "2025",
+    github: "https://github.com/Swagata990",
+    linkedin: "",
+    email: "swagataghosh1119@gmail.com"
+  },
+  {
+    name: "Akshita Singh",
+    image: "./images/akshita.jpg",
+    languages: ["Java"],
+    frameworks: [],
+    databases: [],
+    librariesTools: [],
+    versionControl: [],
+    platform: "",
+    degree: "",
+    class: "11",
+    school: "",
+    expertise: "Fresher",
+    projects: [],
+    joined: "",
+    connectedSince: "",
+    github: "",
+    linkedin: "",
+    email: "nutan180514@gmail.com"
   }
 
 
-];
 
+
+];
 
 const expertises = ["All", "Leadership", "Web Development", "Development", " Database handling", "Design"];
 
@@ -286,9 +406,9 @@ export default function Teams() {
     setSelectedMember(null);
   };
 
-const filteredMembers = selectedExpertise === "All"
-  ? teamMembers
-  : teamMembers.filter(member =>
+  const filteredMembers = selectedExpertise === "All"
+    ? teamMembers
+    : teamMembers.filter(member =>
       Array.isArray(member.expertise)
         ? member.expertise.some(exp => exp.trim() === selectedExpertise.trim())
         : member.expertise.trim() === selectedExpertise.trim()

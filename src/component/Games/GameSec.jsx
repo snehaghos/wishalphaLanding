@@ -117,10 +117,10 @@ const GameCard = ({ game, index }) => {
 const GameSec = () => {
   const games = [
     {
-      title: "raceX",
+      title: "Checkers",
       genre: "Action",
       rating: 4.8,
-      image: "/images/action.jpg",
+      image: "/images/game1.jpg",
       status: "New Release",
       description: "Dive into a neon-lit cyberpunk world where technology meets humanity in the ultimate battle for survival.",
       players: "2.5M",
@@ -130,17 +130,17 @@ const GameSec = () => {
       title: "Minweswepper",
       genre: "Pizzle",
       rating: 4.9,
-      image: "/images/strategy.jpeg",
+      image: "/images/game2.jpg",
       status: "Popular",
       description: "Embark on an epic medieval adventure filled with dragons, magic, and legendary treasures.",
       players: "3.8M",
       color: "from-orange-500 to-red-600",
     },
     {
-      title: "Chess Master",
+      title: "Number Puzzle",
       genre: "Puzzle",
       rating: 4.7,
-      image: "/images/chess.jpg",
+      image: "/images/game3.jpg",
       status: "Trending",
       description: "Command your fleet in intense space battles across the galaxy in this action-packed shooter.",
       players: "1.9M",

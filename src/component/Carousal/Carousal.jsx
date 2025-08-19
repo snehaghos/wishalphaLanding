@@ -4,6 +4,8 @@ import { Play, Download, ArrowBigLeftDash, ArrowBigRightDash } from "lucide-reac
 import SplashCursor from "../../bits/SplashCursor"
 import { Link } from "react-router-dom"
 
+
+
 const InteractiveBackground = () => {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
@@ -260,16 +262,13 @@ const InteractiveStatCard = ({ stat, index }) => {
   )
 }
 
-const InteractiveStats = () => {
-
+const InteractiveStats = ({views}) => {
   const stats = [
-    { value: "10M+", label: "Active Players", color: "text-purple-400", bgColor: "bg-purple-500/10" },
-    //  { value: `${visits}+`, label: "Website Visits", color: "text-purple-400", bgColor: "bg-purple-500/10" },
+    { value: views ? `${views}+` : "...", label: "Website Visits", color: "text-purple-400", bgColor: "bg-purple-500/10" },
     { value: "500+", label: "Games Available", color: "text-pink-400", bgColor: "bg-pink-500/10" },
     { value: "24/7", label: "Online Support", color: "text-blue-400", bgColor: "bg-blue-500/10" },
     { value: "99.9%", label: "Uptime", color: "text-green-400", bgColor: "bg-green-500/10" },
-  ]
-
+  ];
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
       {stats.map((stat, index) => (
@@ -279,7 +278,7 @@ const InteractiveStats = () => {
   )
 }
 
-const InteractiveHeroContent = ({ isVisible }) => {
+const InteractiveHeroContent = ({ isVisible,views }) => {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
   const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [5, -5]))
@@ -318,12 +317,12 @@ const InteractiveHeroContent = ({ isVisible }) => {
       <InteractiveTitle isVisible={isVisible} />
       <InteractiveDescription isVisible={isVisible} />
       <InteractiveButtons isVisible={isVisible} />
-      <InteractiveStats />
+      <InteractiveStats views={views} />
     </motion.div>
   )
 }
 
-const Carousal = ({ isVisible }) => {
+const Carousal = ({ isVisible,views }) => {
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-gray-950 to-pink-900/20 z-0" />
@@ -334,7 +333,7 @@ const Carousal = ({ isVisible }) => {
 
       <InteractiveBackground />
       <div className="container mx-auto px-4 lg:px-6 relative z-10">
-        <InteractiveHeroContent isVisible={isVisible} />
+ <InteractiveHeroContent isVisible={isVisible} views={views} />
       </div>
     </section>
   )

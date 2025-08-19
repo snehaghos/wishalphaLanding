@@ -20,7 +20,7 @@ const DurgaPujaModal = ({ isOpen, onClose }) => {
                     background: "linear-gradient(180deg, rgba(0,0,0,0.9), rgba(10,15,30,0.95))",
                     backdropFilter: "blur(10px)",
                 }}
-                onClick={onClose}
+              
             >
                 <img src="./images/durgapuja.jpg" alt="Durga Puja modal" />
                
