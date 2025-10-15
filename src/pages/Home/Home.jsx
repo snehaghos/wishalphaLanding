@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Carousal from "../../component/Carousal/Carousal";
 import Features from "../../component/Features/Features";
 import GameSec from "../../component/Games/GameSec";
-import DurgaPujaModal from "../../component/specialdaymodals/DurgaPujaModal";
+import DiwaliModal from "../../component/specialdaymodals/DiwaliModal"; 
 import { db } from "../../lib/firebase";
 import { doc, getDoc, setDoc, updateDoc, increment } from "firebase/firestore";
 
@@ -15,14 +15,11 @@ const Home = () => {
 
   useEffect(() => {
     let isMounted = true;
-
     const updateViews = async () => {
       try {
         const counterRef = doc(db, "pageViews", "landing");
         const snap = await getDoc(counterRef);
-
         if (!isMounted) return;
-
         if (!snap.exists()) {
           await setDoc(counterRef, { count: 1 });
           if (isMounted) setViews(1);
@@ -35,18 +32,14 @@ const Home = () => {
         console.error("Error updating views:", error);
       }
     };
-
     updateViews();
-
     return () => {
       isMounted = false;
     };
   }, []);
 
-
   
   useEffect(() => {
-  
     const timer = setTimeout(() => {
       setShowModal(true);
     }, 500);
@@ -60,10 +53,12 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center bg-cover bg-center">
-      <DurgaPujaModal isOpen={showModal} onClose={closeModal} />
+      
+      <DiwaliModal isOpen={showModal} onClose={closeModal} />
       
       <div className="w-full mb-10">
- <Carousal isVisible={true} views={views} />      </div>
+        <Carousal isVisible={true} views={views} />      
+      </div>
       
       <div className="mt-10">
         <GameSec/>
